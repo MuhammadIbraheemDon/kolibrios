@@ -69,7 +69,17 @@ include "blkdev/disk_cache.inc" ; caching for plug-n-play disks
 
 include "fs/fs_lfn.inc"         ; sysfunction 70
 
+; Network stack switch (preprocessor level, because fasm expands
+; 'include' before it evaluates 'if'). Change the value to 0 to build
+; the kernel with the full TCP/IP stack again.
+define NETWORK_DISABLED 1
+
+match =1, NETWORK_DISABLED {
+include "network/stack_disabled.inc"
+}
+match =0, NETWORK_DISABLED {
 include "network/stack.inc"
+}
 
 include "crc.inc"               ; checksums
 include "unicode.inc"

@@ -16,8 +16,6 @@
 /SYS/@RESHARE           ""   0	# Shared resources
 /SYS/LOADDRV            SDHCI 0	# Start SDHCI driver
 /SYS/@DOCKY             ""   0	# Start docky
-/SYS/NETWORK/NETCFG     A    0	# Init network driver
-/SYS/NETWORK/@ZEROCONF  ""   0	# Network configuration
 /SYS/@SS                ASSM 0	# Screensaver
 /SYS/@VOLUME            ""   0	# Start volume daemon
 /SYS/SEARCHAP           ""   0	# Search and mount additional system directory
